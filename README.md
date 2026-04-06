@@ -2,9 +2,27 @@
 
 🚀 Senior Backend Engineer with 9+ years of experience building scalable SaaS systems, microservices, and AI-powered backend platforms.
 
-🔗 Live Portfolio: https://your-vercel-link.vercel.app  
+🔗 Shareable portfolio link (after you set `NEXT_PUBLIC_SITE_URL`):  
+`https://<your-project>.vercel.app/muhammad-awais/software-engineer/`  
+(URL uses hyphens instead of spaces: **Muhammad Awais** + **Software Engineer** → readable path.)
+
 🔗 LinkedIn: https://www.linkedin.com/in/awais-eng/  
 🔗 GitHub: https://github.com/engrawais  
+
+### Deploy on Vercel
+
+1. Push this repo to GitHub (if it is not already).
+2. Go to [vercel.com](https://vercel.com) → **Add New** → **Project** → import the GitHub repo.
+3. Leave defaults (Next.js). **Deploy**.
+4. After the first deploy, open **Project → Settings → General**: set **Project Name** if you want a shorter host (e.g. `muhammad-awais` → `https://muhammad-awais.vercel.app`). Names must be lowercase; use hyphens, not spaces.
+5. **Project → Settings → Environment Variables**: add **`NEXT_PUBLIC_SITE_URL`** = your production URL with **no** trailing slash, e.g. `https://muhammad-awais.vercel.app`.
+6. **Redeploy** (Deployments → … → Redeploy) so the Hero “Live site” link and PDF use the correct origin.
+
+**Send to hiring managers:**  
+`https://<your-vercel-subdomain>.vercel.app/muhammad-awais/software-engineer/`  
+(or your custom domain + the same path). That path opens your main portfolio.
+
+For local dev, copy `.env.example` to `.env.local`, set `NEXT_PUBLIC_SITE_URL=http://localhost:3000`, and restart `npm run dev`.
 
 ---
 

@@ -1,4 +1,5 @@
 import { Resume } from "@/types/resume";
+import { getPortfolioShareUrl } from "@/lib/site";
 
 export const resume: Resume = {
   name: "Muhammad Awais",
@@ -8,7 +9,7 @@ export const resume: Resume = {
   phone: "+92 331-5669169",
   linkedin: "https://www.linkedin.com/in/awais-eng/",
   github: "https://github.com/engrawais",
-  portfolioUrl: "https://your-vercel-link.vercel.app",
+  portfolioUrl: getPortfolioShareUrl(),
   summary:
     "Senior Backend Engineer with 9+ years of experience building scalable SaaS systems, microservices, and AI-powered backend platforms. I specialize in designing and owning backend systems using .NET 8, ASP.NET Core, and Clean Architecture, and have built and managed distributed microservices, AI pipelines, and high-scale API systems with 99.9% uptime.",
   focusAreas: [
