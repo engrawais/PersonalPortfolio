@@ -2,136 +2,154 @@ import { Resume } from "@/types/resume";
 
 export const resume: Resume = {
   name: "Muhammad Awais",
-  title: "Software Engineering Manager",
-  location: "Islamabad, Pakistan",
+  title: "Senior Backend Engineer (.NET | AI Systems)",
+  location: "Remote",
   email: "awais.cns@gmail.com",
   phone: "+92 331-5669169",
-  linkedin: "https://www.linkedin.com/in/muhammadawais-developer/",
-  summary: `Dynamic Software Engineer with 14 years of experience driving technical innovation and team excellence across software development projects. Expertise in leading high-performing teams, implementing robust technology strategies, and delivering high-quality solutions aligned with business goals. Strong in Agile, risk analysis, and stakeholder management, fostering cross-functional collaboration to accelerate product life-cycles. Hands-on with .NET, C#, React, and modern web frameworks—focused on performance, scalability, and innovation.`,
+  linkedin: "https://www.linkedin.com/in/awais-eng/",
+  github: "https://github.com/engrawais",
+  portfolioUrl: "https://your-vercel-link.vercel.app",
+  summary:
+    "Senior Backend Engineer with 9+ years of experience building scalable SaaS systems, microservices, and AI-powered backend platforms. I specialize in designing and owning backend systems using .NET 8, ASP.NET Core, and Clean Architecture, and have built and managed distributed microservices, AI pipelines, and high-scale API systems with 99.9% uptime.",
+  focusAreas: [
+    "Scalable backend architecture",
+    "Microservices & distributed systems",
+    "AI-powered backend pipelines (LLMs)",
+    "Performance optimization & reliability",
+  ],
   experience: [
     {
       company: "Codonomy",
-      role: "Software Engineering Manager",
-      location: "Islamabad",
-      start: "Nov 2023",
+      role: "Senior .NET Developer",
+      location: "Remote",
+      start: "2023",
       end: "Present",
       bullets: [
-        "Collaborated with the CTO to define and execute technical strategy aligned with long-term vision.",
-        "Led recruitment, training, and performance management to drive productivity and engineering excellence.",
-        "Provided technical guidance across the product life-cycle to ensure innovation, quality, and timely delivery.",
-        "Maintained and improved stability, security, and scalability of the tech stack; proactively mitigated risks.",
-        "Partnered with product, sales, and support to ensure technology solutions met business and market needs."
+        "Owned backend architecture for SaaS platform using .NET 8",
+        "Designed 14+ microservices with scalable architecture",
+        "Built AI-powered pipelines with LLM integrations",
+        "Developed reusable libraries across services",
+        "Managed CI/CD, Docker, and Kubernetes infrastructure",
       ],
-      stack: [".NET", "C#", "React", "Azure", "Docker", "CI/CD"]
+      stack: [
+        ".NET 8",
+        "ASP.NET Core",
+        "Microservices",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "LLM integrations",
+      ],
     },
     {
-      company: "Remotebase",
-      role: "Senior Software Engineer",
+      company: "RemoteBase / Cloudtek",
+      role: "Senior .NET Developer",
       location: "Remote",
-      start: "Jan 2022",
-      end: "Nov 2023",
+      start: "2014",
+      end: "2023",
       bullets: [
-        "Developed and maintained web applications using C#, Web API, JavaScript, and jQuery.",
-        "Applied OOP and design patterns for scalable, maintainable solutions.",
-        "Built dynamic, interactive UI components with Angular 17.",
-        "Practiced TDD with robust unit tests; hosted on IIS.",
-        "Worked in Agile (Scrum) with Git for version control and code integrity."
+        "Built enterprise-grade APIs with ASP.NET Core",
+        "Optimized performance (60% latency reduction)",
+        "Deployed systems using Docker & Kubernetes",
+        "Designed scalable systems for 500+ users",
       ],
-      stack: ["C#", "Web API", "Angular 17", "TDD", "IIS", "Git"]
+      stack: [
+        "ASP.NET Core",
+        "Web APIs",
+        "Docker",
+        "Kubernetes",
+        "SQL Server",
+      ],
     },
-    {
-      company: "Cloudtek",
-      role: "Software Engineer",
-      location: "Islamabad",
-      start: "Jan 2020",
-      end: "Jan 2022",
-      bullets: [
-        "Delivered solutions for 12–15 clients across diverse architectures and frameworks.",
-        "Led teams of 5–10 engineers; drove Agile SDLC practices and Jira-based tracking.",
-        "Owned project setup via Jira, Slack, and Azure Boards; facilitated standups and retros.",
-        "Conducted technical defenses with clients and onboarded projects/environment.",
-        "Implemented Clean Architecture, N-Layer, Options Pattern; enforced code quality with SonarQube and NUnit.",
-        "Set up GitHub Actions, Docker, CI/CD; developed job worker services and Camunda (Zeebe Client) APIs.",
-        "Built apps with .NET 6 and Angular 17; integrated Azure Key Vault, OAuth/JWT auth.",
-        "Used AWS Lambda, QuickSight, CloudWatch, API Gateway; mixed LINQ and stored procedures."
-      ],
-      stack: [".NET 6", "Angular 17", "Camunda (Zeebe)", "Docker", "CI/CD", "Azure", "AWS"]
-    },
-    {
-      company: "Computer & Networking Services",
-      role: "Software Developer",
-      location: "Islamabad",
-      start: "Jan 2017",
-      end: "Dec 2019",
-      bullets: [
-        "Built HRMS with Razor Pages, MVC, SQL, Web & WinForms, and REST APIs.",
-        "Developed background services in C#; practiced TDD with NUnit.",
-        "Frontend with HTML/JS/jQuery/Ajax, Bootstrap 4, ADO.NET, LINQ.",
-        "Created Windows Services utilities; authored Software Development Plans.",
-        "Deployed to VPS/IIS."
-      ],
-      stack: ["C#", "ASP.NET MVC", "WinForms", "SQL Server", "Bootstrap"]
-    },
-    {
-      company: "Computer & Networking Services",
-      role: "Technical Project Manager",
-      location: "Islamabad",
-      start: "Jan 2012",
-      end: "Dec 2016",
-      bullets: [
-        "Drafted SDPs (scope, constraints, limitations, flows, layouts).",
-        "Prepared budgets per scope/resources; tracked execution vs. budget.",
-        "Reported status, strategy, and adjustments; managed vendor contracts.",
-        "Applied industry best practices and standards; measured performance for continuous improvement."
-      ],
-      stack: ["PMBOK/Agile", "Budgeting", "Vendor Management"]
-    }
   ],
   education: [
     {
       school: "COMSATS University Islamabad",
       degree: "Bachelors in Computer Engineering",
       start: "2007",
-      end: "2012"
-    }
+      end: "2012",
+    },
   ],
   skills: [
     {
-      group: "Backend & Platforms",
-      items: [".NET 6", "ASP.NET", "C#", "Web API", "Windows Services", "IIS", "Azure", "AWS", "GCP", "Docker", "CI/CD"]
+      group: "Backend",
+      items: [
+        ".NET 6/7/8",
+        "ASP.NET Core",
+        "Web APIs",
+        "Entity Framework Core",
+        "Dapper",
+      ],
     },
     {
-      group: "Frontend",
-      items: ["React 18", "Angular 17", "Next.js", "TypeScript", "HTML", "CSS/SASS/LESS", "RxJS", "jQuery", "Bootstrap 4/5"]
+      group: "Architecture",
+      items: [
+        "Microservices",
+        "Clean Architecture",
+        "CQRS",
+        "DDD",
+        "Event-driven systems",
+        "Serverless (AWS Lambda)",
+      ],
+    },
+    {
+      group: "Cloud & DevOps",
+      items: [
+        "AWS (EC2, S3, Lambda)",
+        "Azure (AKS, Functions)",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "GitHub Actions",
+        "ElasticSearch",
+      ],
     },
     {
       group: "Databases",
-      items: ["SQL Server", "Azure Cosmos DB", "MySQL", "PostgreSQL", "MongoDB"]
+      items: ["SQL Server", "PostgreSQL", "MongoDB", "Redis"],
     },
     {
-      group: "Security & Auth",
-      items: ["OAuth 2.0", "JWT", "Authentication/Authorization", "Azure Key Vault", "Active Directory", "IAM"]
+      group: "AI Systems",
+      items: [
+        "LLM integrations",
+        "Prompt orchestration",
+        "Background jobs",
+        "Batching",
+        "Rate limiting",
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "OptifyNow – OTP SaaS Platform",
+      description:
+        "Scalable OTP delivery system using Node.js, MongoDB, and Socket.IO with payments (Stripe/Crypto), supporting 1,000+ users with 99.9% uptime.",
     },
     {
-      group: "DevOps & Quality",
-      items: ["Git", "GitHub Actions", "Bitbucket", "Azure Boards/Pipelines", "Jenkins", "SonarQube", "TDD", "NUnit"]
+      name: "VestureMe – AI Virtual Try-On",
+      description:
+        "GPU-based AI pipeline using PyTorch and FastAPI enabling real-time virtual try-on (5–30s response).",
     },
     {
-      group: "Workflow/Orchestration",
-      items: ["Camunda (Zeebe Client)"]
+      name: "HRMS – Workforce System",
+      description:
+        "ASP.NET MVC HRMS for 10,000+ users with 50% performance improvement.",
     },
-    {
-      group: "Programming Languages",
-      items: ["C#", "JavaScript/TypeScript", "Python", "Java", "Ruby", "SQL"]
-    },
-    {
-      group: "Other",
-      items: ["XML", "REST", "SOAP", "ECMAScript", "Jira/Kanban", "UI/UX basics", "Data-driven decision making", "Cross-functional collaboration"]
-    }
+  ],
+  achievements: [
+    "Maintained 99.9%+ system uptime",
+    "Reduced deployment failures by 50%",
+    "Designed scalable distributed systems",
+    "Built production-ready AI backend pipelines",
+  ],
+  lookingFor: [
+    "Senior Backend Engineer roles",
+    "Scalable SaaS / AI-driven systems",
+    "Remote-first engineering teams",
   ],
   cta: {
     resumeUrl: "/resume.pdf",
-    primaryActionText: "Download Resume",
-    secondaryActionText: "Connect on LinkedIn"
-  }
+    primaryActionText: "Download resume",
+    secondaryActionText: "LinkedIn",
+  },
 };

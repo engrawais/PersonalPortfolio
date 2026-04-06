@@ -1,10 +1,15 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import { Typography, Button, Space } from 'antd';
-import { DownloadOutlined, LinkedinOutlined } from '@ant-design/icons';
-import { Resume } from '@/types/resume';
-import { Section } from './Section';
+import React from "react";
+import { Typography, Button, Space } from "antd";
+import {
+  DownloadOutlined,
+  LinkedinOutlined,
+  GithubOutlined,
+  LinkOutlined,
+} from "@ant-design/icons";
+import { Resume } from "@/types/resume";
+import { Section } from "./Section";
 
 const { Title, Text } = Typography;
 
@@ -13,95 +18,69 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ data }) => {
-  const typedRef = useRef<HTMLSpanElement>(null);
-  const typedInstanceRef = useRef<any>(null);
-  const summaryFirstSentence = data.summary.split('.')[0] + '.';
-
-  useEffect(() => {
-    const loadTyped = async () => {
-      try {
-        // Prevent multiple instances
-        if (typedInstanceRef.current) {
-          typedInstanceRef.current.destroy();
-          typedInstanceRef.current = null;
-        }
-
-        // Import Typed.js dynamically
-        const Typed = (await import('typed.js')).default;
-
-        if (typedRef.current && !typedInstanceRef.current) {
-          // Clear any existing content
-          typedRef.current.innerHTML = '';
-
-          typedInstanceRef.current = new Typed(typedRef.current, {
-            strings: [
-              'Full Stack Developer',
-              'React Specialist',
-              'Node.js Expert',
-              'Software Engineer'
-            ],
-            typeSpeed: 80,
-            backSpeed: 50,
-            backDelay: 1500,
-            loop: true,
-            showCursor: true,
-            cursorChar: '|',
-            autoInsertCss: true,
-          });
-        }
-      } catch (error) {
-        console.error('Failed to load Typed.js:', error);
-        // Fallback: show static text if Typed.js fails to load
-        if (typedRef.current) {
-          typedRef.current.textContent = 'Full Stack Developer';
-        }
-      }
-    };
-
-    loadTyped();
-
-    return () => {
-      if (typedInstanceRef.current) {
-        typedInstanceRef.current.destroy();
-        typedInstanceRef.current = null;
-      }
-    };
-  }, []); // Empty dependency array to run only once
+  const tagline =
+    "Senior Backend Engineer with 9+ years of experience building scalable SaaS systems, microservices, and AI-powered backend platforms.";
 
   return (
     <Section id="home">
-      <div style={{ textAlign: 'center', paddingTop: '40px' }}>
-        <Space direction="vertical" size="large">
+      <div style={{ textAlign: "center", paddingTop: 32, maxWidth: 720, margin: "0 auto" }}>
+        <Space direction="vertical" size="large" style={{ width: "100%" }}>
           <div>
-            <Title level={1} style={{ fontSize: '3.5rem', marginBottom: '16px', fontWeight: 700 }}>
+            <Text
+              style={{
+                display: "block",
+                fontSize: 13,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "rgba(0,0,0,0.45)",
+                marginBottom: 12,
+                fontWeight: 600,
+              }}
+            >
+              Backend engineering · .NET · Distributed systems
+            </Text>
+            <Title
+              level={1}
+              style={{
+                fontSize: "clamp(2rem, 5vw, 2.75rem)",
+                marginBottom: 12,
+                fontWeight: 700,
+                lineHeight: 1.2,
+              }}
+            >
               {data.name}
             </Title>
             <Title
-              level={3}
+              level={4}
               style={{
-                color: '#1677ff',
+                color: "#2563eb",
                 fontWeight: 500,
-                marginBottom: '24px',
-                minHeight: '40px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                marginBottom: 20,
+                marginTop: 0,
               }}
             >
-              <span ref={typedRef}></span>
+              {data.title}
             </Title>
-            <Text style={{ fontSize: '18px', color: '#666', maxWidth: '600px', display: 'block', margin: '0 auto' }}>
-              {summaryFirstSentence}
+            <Text
+              style={{
+                fontSize: 17,
+                color: "rgba(0,0,0,0.65)",
+                display: "block",
+                lineHeight: 1.65,
+              }}
+            >
+              {tagline}
             </Text>
           </div>
 
-          <Space size="large" wrap>
+          <Space size="middle" wrap style={{ justifyContent: "center" }}>
             <Button
               type="primary"
               size="large"
               icon={<DownloadOutlined />}
               href={data.cta.resumeUrl}
               download
+              style={{ borderRadius: 8 }}
             >
               {data.cta.primaryActionText}
             </Button>
@@ -111,8 +90,30 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
               href={data.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              style={{ borderRadius: 8 }}
             >
               {data.cta.secondaryActionText}
+            </Button>
+            <Button
+              size="large"
+              icon={<GithubOutlined />}
+              href={data.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderRadius: 8 }}
+            >
+              GitHub
+            </Button>
+            <Button
+              size="large"
+              type="default"
+              icon={<LinkOutlined />}
+              href={data.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderRadius: 8 }}
+            >
+              Live site
             </Button>
           </Space>
         </Space>

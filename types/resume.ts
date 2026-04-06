@@ -20,6 +20,11 @@ export interface SkillGroup {
   items: string[];
 }
 
+export interface Project {
+  name: string;
+  description: string;
+}
+
 export interface CTA {
   resumeUrl: string;
   primaryActionText: string;
@@ -33,9 +38,15 @@ export interface Resume {
   email: string;
   phone: string;
   linkedin: string;
+  github: string;
+  portfolioUrl: string;
   summary: string;
+  focusAreas: string[];
   experience: Experience[];
   education: Education[];
   skills: SkillGroup[];
+  projects: Project[];
+  achievements: string[];
+  lookingFor: string[];
   cta: CTA;
 }

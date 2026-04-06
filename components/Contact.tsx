@@ -1,10 +1,17 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Row, Col, Card, Button } from 'antd';
-import { MailOutlined, PhoneOutlined, LinkedinOutlined } from '@ant-design/icons';
-import { Resume } from '@/types/resume';
-import { Section } from './Section';
+import React from "react";
+import { Row, Col, Card, Button, Typography, Space } from "antd";
+import {
+  MailOutlined,
+  PhoneOutlined,
+  LinkedinOutlined,
+  GithubOutlined,
+} from "@ant-design/icons";
+import { Resume } from "@/types/resume";
+import { Section } from "./Section";
+
+const { Paragraph, Title } = Typography;
 
 interface ContactProps {
   data: Resume;
@@ -12,114 +19,80 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ data }) => {
   return (
-    <Section id="contact" title="Get In Touch">
-      <Row justify="center" align="middle">
-        <Col xs={22} sm={20} md={16} lg={12} xl={10}>
+    <Section id="contact" title="Contact">
+      <Row justify="center">
+        <Col xs={24} md={16} lg={12}>
           <Card
+            bordered={false}
             style={{
-              textAlign: 'center',
-              borderRadius: '16px',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-              border: '1px solid rgba(5, 5, 5, 0.06)',
-              padding: '24px 16px'
+              borderRadius: 12,
+              border: "1px solid #f0f0f0",
+              boxShadow: "none",
             }}
-            bodyStyle={{ padding: '32px 24px' }}
+            bodyStyle={{ padding: 32 }}
           >
-            <div style={{ marginBottom: '32px' }}>
-              <h3
-                style={{
-                  fontSize: '28px',
-                  fontWeight: 600,
-                  marginBottom: '16px',
-
-                }}
-              >
-                Let's Connect!
-              </h3>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: '#666',
-                  lineHeight: '1.6',
-                  margin: 0,
-                  maxWidth: '400px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto'
-                }}
-              >
-                I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and software engineering.
-              </p>
-            </div>
-
-            <div
+            <Title level={4} style={{ marginTop: 0, textAlign: "center" }}>
+              {"Let's talk"}
+            </Title>
+            <Paragraph
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                alignItems: 'center',
-                maxWidth: '280px',
-                margin: '0 auto'
+                textAlign: "center",
+                color: "rgba(0,0,0,0.65)",
+                marginBottom: 28,
+                fontSize: 15,
+                lineHeight: 1.65,
               }}
             >
+              Open to senior backend and platform roles. Reach out for roles involving .NET,
+              microservices, cloud, or AI-backed APIs.
+            </Paragraph>
+
+            <Space direction="vertical" size="middle" style={{ width: "100%" }}>
               <Button
                 type="primary"
                 size="large"
+                block
                 icon={<MailOutlined />}
                 href={`mailto:${data.email}`}
-                style={{
-                  width: '100%',
-                  height: '48px',
-                  borderRadius: '8px',
-                  fontSize: '16px',
-                  fontWeight: 500
-                }}
+                style={{ borderRadius: 8, height: 46 }}
               >
-                Email Me
+                {data.email}
               </Button>
 
               <Button
                 size="large"
+                block
                 icon={<PhoneOutlined />}
-                href={`tel:${data.phone}`}
-                style={{
-                  width: '100%',
-                  height: '48px',
-                  borderRadius: '8px',
-                  fontSize: '16px',
-                  fontWeight: 500
-                }}
+                href={`tel:${data.phone.replace(/\s/g, "")}`}
+                style={{ borderRadius: 8, height: 46 }}
               >
-                Call Me
+                {data.phone}
               </Button>
 
               <Button
                 size="large"
+                block
                 icon={<LinkedinOutlined />}
                 href={data.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  width: '100%',
-                  height: '48px',
-                  borderRadius: '8px',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  backgroundColor: '#0077b5',
-                  borderColor: '#0077b5',
-                  color: 'white'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#005885';
-                  e.currentTarget.style.borderColor = '#005885';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#0077b5';
-                  e.currentTarget.style.borderColor = '#0077b5';
-                }}
+                style={{ borderRadius: 8, height: 46 }}
               >
-                LinkedIn
+                LinkedIn profile
               </Button>
-            </div>
+
+              <Button
+                size="large"
+                block
+                icon={<GithubOutlined />}
+                href={data.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ borderRadius: 8, height: 46 }}
+              >
+                GitHub
+              </Button>
+            </Space>
           </Card>
         </Col>
       </Row>

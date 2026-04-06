@@ -40,7 +40,7 @@ body {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #1677ff;
+  background: #2563eb;
   color: white;
   padding: 8px;
   text-decoration: none;
@@ -53,17 +53,16 @@ body {
   top: 6px;
 }
 
-/* Ensure consistent card heights */
+/* Cards: light border, minimal motion */
 .ant-card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  box-shadow: none;
   border-radius: 12px;
   border: 1px solid #f0f0f0;
 }
 
 .ant-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+  border-color: #e5e7eb;
+  transition: border-color 0.2s ease;
 }
 
 /* Custom header styles */
@@ -71,8 +70,8 @@ body {
 .ant-menu-horizontal > .ant-menu-submenu:hover,
 .ant-menu-horizontal > .ant-menu-item-selected,
 .ant-menu-horizontal > .ant-menu-submenu-selected {
-  color: #1677ff;
-  border-bottom-color: #1677ff;
+  color: #2563eb;
+  border-bottom-color: #2563eb;
 }
 
 /* Responsive typography */

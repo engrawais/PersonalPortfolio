@@ -1,13 +1,34 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { Layout, Menu, Drawer, Button } from 'antd';
-import { HomeOutlined, UserOutlined, ProjectOutlined, ToolOutlined, BookOutlined, ContactsOutlined, MenuOutlined } from '@ant-design/icons';
+import React, { useState, useEffect } from "react";
+import { Layout, Menu, Drawer, Button } from "antd";
+import {
+  HomeOutlined,
+  UserOutlined,
+  ProjectOutlined,
+  ToolOutlined,
+  BookOutlined,
+  ContactsOutlined,
+  MenuOutlined,
+  AppstoreOutlined,
+  TrophyOutlined,
+} from "@ant-design/icons";
 
 const { Header } = Layout;
 
+const SECTION_IDS = [
+  "home",
+  "summary",
+  "experience",
+  "skills",
+  "projects",
+  "highlights",
+  "education",
+  "contact",
+] as const;
+
 export const HeaderNav: React.FC = () => {
-  const [selectedKeys, setSelectedKeys] = useState(['home']);
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(["home"]);
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -17,40 +38,42 @@ export const HeaderNav: React.FC = () => {
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'summary', 'experience', 'skills', 'education', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section);
+      for (let i = SECTION_IDS.length - 1; i >= 0; i--) {
+        const id = SECTION_IDS[i];
+        const element = document.getElementById(id);
         if (element && element.offsetTop <= scrollPosition) {
-          setSelectedKeys([section]);
+          setSelectedKeys([id]);
           break;
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const menuItems = [
-    { key: 'home', label: 'Home', icon: <HomeOutlined /> },
-    { key: 'summary', label: 'About', icon: <UserOutlined /> },
-    { key: 'experience', label: 'Experience', icon: <ProjectOutlined /> },
-    { key: 'skills', label: 'Skills', icon: <ToolOutlined /> },
-    { key: 'education', label: 'Education', icon: <BookOutlined /> },
-    { key: 'contact', label: 'Contact', icon: <ContactsOutlined /> },
+    { key: "home", label: "Home", icon: <HomeOutlined /> },
+    { key: "summary", label: "About", icon: <UserOutlined /> },
+    { key: "experience", label: "Experience", icon: <ProjectOutlined /> },
+    { key: "skills", label: "Stack", icon: <ToolOutlined /> },
+    { key: "projects", label: "Projects", icon: <AppstoreOutlined /> },
+    { key: "highlights", label: "Highlights", icon: <TrophyOutlined /> },
+    { key: "education", label: "Education", icon: <BookOutlined /> },
+    { key: "contact", label: "Contact", icon: <ContactsOutlined /> },
   ];
 
   const handleMenuClick = (key: string) => {
-    document.getElementById(key)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(key)?.scrollIntoView({ behavior: "smooth" });
     if (isMobile) {
       setDrawerVisible(false);
     }
@@ -59,52 +82,52 @@ export const HeaderNav: React.FC = () => {
   const menuProps = {
     theme: "light" as const,
     selectedKeys,
-    items: menuItems.map(item => ({
+    items: menuItems.map((item) => ({
       ...item,
-      onClick: () => handleMenuClick(item.key)
+      onClick: () => handleMenuClick(item.key),
     })),
     style: {
-      backgroundColor: 'transparent',
-      borderBottom: 'none',
-      minWidth: 0
-    }
+      backgroundColor: "transparent",
+      borderBottom: "none",
+      minWidth: 0,
+    },
   };
 
   return (
     <>
       <Header
         style={{
-          position: 'fixed',
+          position: "fixed",
           top: 0,
-          width: '100%',
+          width: "100%",
           zIndex: 1000,
-          backdropFilter: 'blur(10px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          borderBottom: '1px solid rgba(5, 5, 5, 0.06)',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
-          padding: '0 16px',
-          height: '64px',
-          lineHeight: '64px'
+          backdropFilter: "blur(10px)",
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          borderBottom: "1px solid rgba(5, 5, 5, 0.06)",
+          boxShadow: "0 1px 0 rgba(0, 0, 0, 0.04)",
+          padding: "0 16px",
+          height: "64px",
+          lineHeight: "64px",
         }}
       >
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            height: '100%'
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            maxWidth: "1200px",
+            margin: "0 auto",
+            height: "100%",
           }}
         >
           <div
             style={{
-              color: '#1677ff',
+              color: "#2563eb",
               fontWeight: 600,
-              fontSize: isMobile ? '16px' : '18px',
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis'
+              fontSize: isMobile ? "15px" : "17px",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
             }}
           >
             Muhammad Awais
@@ -116,9 +139,9 @@ export const HeaderNav: React.FC = () => {
               icon={<MenuOutlined />}
               onClick={() => setDrawerVisible(true)}
               style={{
-                border: 'none',
-                boxShadow: 'none',
-                color: '#1677ff'
+                border: "none",
+                boxShadow: "none",
+                color: "#2563eb",
               }}
             />
           ) : (
@@ -128,15 +151,14 @@ export const HeaderNav: React.FC = () => {
               style={{
                 ...menuProps.style,
                 flex: 1,
-                justifyContent: 'flex-end',
-                marginLeft: '40px'
+                justifyContent: "flex-end",
+                marginLeft: "24px",
               }}
             />
           )}
         </div>
       </Header>
 
-      {/* Mobile Drawer */}
       <Drawer
         title="Navigation"
         placement="right"
@@ -145,11 +167,11 @@ export const HeaderNav: React.FC = () => {
         width={280}
         styles={{
           header: {
-            borderBottom: '1px solid #f0f0f0'
+            borderBottom: "1px solid #f0f0f0",
           },
           body: {
-            padding: 0
-          }
+            padding: 0,
+          },
         }}
       >
         <Menu
@@ -157,7 +179,7 @@ export const HeaderNav: React.FC = () => {
           mode="vertical"
           style={{
             ...menuProps.style,
-            height: '100%'
+            height: "100%",
           }}
         />
       </Drawer>

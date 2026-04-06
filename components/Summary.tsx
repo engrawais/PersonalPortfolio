@@ -1,8 +1,7 @@
-import React from 'react';
-import { Typography, Tag, Space, Avatar, Row, Col, Card } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-import { Resume } from '@/types/resume';
-import { Section } from './Section';
+import React from "react";
+import { Typography, Tag, Space, Row, Col } from "antd";
+import { Resume } from "@/types/resume";
+import { Section } from "./Section";
 
 const { Paragraph, Title } = Typography;
 
@@ -11,105 +10,62 @@ interface SummaryProps {
 }
 
 export const Summary: React.FC<SummaryProps> = ({ data }) => {
-  const highlightedSkills = ['.NET', 'C#', 'React', 'Node.js', 'TypeScript', 'Agile'];
+  const backendTags = data.skills.find((g) => g.group === "Backend")?.items ?? [];
 
   return (
-    <Section id="summary" title="About Me">
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-        <Row gutter={[48, 32]} align="middle" justify="center">
-          {/* Profile Image Column */}
-          <Col xs={24} md={8} style={{ textAlign: 'center' }}>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '16px'
-            }}>
-              <Avatar
-                size={200}
-                icon={<UserOutlined />}
-                style={{
-                  backgroundColor: '#f0f2ff',
-                  color: '#1677ff',
-                  border: '4px solid #1677ff',
-                  fontSize: '60px'
-                }}
-                src="/me.jpg"
-              />
-              <Title level={4} style={{
-                margin: 0,
-                color: '#1677ff',
-                fontWeight: 500
-              }}>
-                {data.name}
-              </Title>
-              <Tag
-                color="geekblue"
-                style={{
-                  fontSize: '14px',
-                  padding: '6px 16px',
-                  borderRadius: '20px',
-                  fontWeight: 500
-                }}
-              >
-                {data.title}
-              </Tag>
-            </div>
-          </Col>
-
-          {/* Content Column */}
-          <Col xs={24} md={16}>
-            <Card
+    <Section id="summary" title="About">
+      <div style={{ maxWidth: 880, margin: "0 auto" }}>
+        <Row gutter={[40, 32]}>
+          <Col xs={24}>
+            <Paragraph
               style={{
-                border: 'none',
-                boxShadow: '0 2px 16px rgba(22, 119, 255, 0.08)',
-                borderRadius: '16px',
-                backgroundColor: '#fafcff'
+                fontSize: 16,
+                lineHeight: 1.75,
+                color: "rgba(0,0,0,0.75)",
+                marginBottom: 28,
               }}
-              bodyStyle={{ padding: '32px' }}
             >
-              <Paragraph
-                style={{
-                  fontSize: '16px',
-                  lineHeight: '1.8',
-                  textAlign: 'justify',
-                  color: '#555',
-                  marginBottom: '24px'
-                }}
-              >
-                {data.summary}
-              </Paragraph>
+              {data.summary}
+            </Paragraph>
 
-              <div style={{ marginTop: '24px' }}>
-                <Title
-                  level={5}
+            <Title level={5} style={{ marginBottom: 12, fontWeight: 600 }}>
+              Focus areas
+            </Title>
+            <ul
+              style={{
+                paddingLeft: 20,
+                margin: "0 0 28px 0",
+                color: "rgba(0,0,0,0.75)",
+                lineHeight: 1.75,
+              }}
+            >
+              {data.focusAreas.map((item) => (
+                <li key={item} style={{ marginBottom: 8 }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <Title level={5} style={{ marginBottom: 12, fontWeight: 600 }}>
+              Core backend stack
+            </Title>
+            <Space wrap size={[8, 8]}>
+              {backendTags.map((skill) => (
+                <Tag
+                  key={skill}
                   style={{
-                    marginBottom: '16px',
-                    color: '#1677ff',
-                    fontWeight: 600
+                    fontSize: 13,
+                    padding: "4px 12px",
+                    borderRadius: 6,
+                    border: "1px solid #e5e7eb",
+                    background: "#fff",
+                    color: "rgba(0,0,0,0.75)",
                   }}
                 >
-                  Core Technologies
-                </Title>
-                <Space wrap size="small">
-                  {highlightedSkills.map((skill, index) => (
-                    <Tag
-                      key={skill}
-                      color={index % 2 === 0 ? 'blue' : 'geekblue'}
-                      style={{
-                        fontSize: '13px',
-                        padding: '6px 12px',
-                        borderRadius: '8px',
-                        fontWeight: 500,
-                        border: 'none'
-                      }}
-                    >
-                      {skill}
-                    </Tag>
-                  ))}
-                </Space>
-              </div>
-            </Card>
+                  {skill}
+                </Tag>
+              ))}
+            </Space>
           </Col>
         </Row>
       </div>

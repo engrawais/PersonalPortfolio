@@ -1,190 +1,110 @@
-# Muhammad Awais - Personal Portfolio Website
+# Muhammad Awais – Senior Backend Engineer (.NET | AI Systems)
 
-A sleek, modern, fully responsive personal portfolio website built with Next.js 14, TypeScript, and Ant Design v5. Designed for static export with no backend dependencies.
+🚀 Senior Backend Engineer with 9+ years of experience building scalable SaaS systems, microservices, and AI-powered backend platforms.
 
-## 🚀 Features
-
-- **Single Page Application** with smooth scrolling and anchor navigation
-- **Fully Responsive** design optimized for all devices
-- **Accessible** with keyboard navigation and screen reader support
-- **SEO Optimized** with proper metadata and OpenGraph tags
-- **Static Export Ready** for deployment to any static hosting service
-- **Beautiful UI** with Ant Design components and custom theming
-- **Performance Optimized** with minimal bundle size
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **UI Library:** Ant Design v5
-- **Styling:** CSS Modules + Global CSS
-- **Icons:** Ant Design Icons
-- **Build Tool:** Next.js built-in bundler
-
-## 📋 Prerequisites
-
-- Node.js 18.0 or later
-- pnpm, npm, or yarn package manager
-
-## 🏃‍♂️ Quick Start
-
-### Installation
-
-```bash
-# Clone the repository (if applicable)
-git clone <repository-url>
-cd portfolio-website
-
-# Install dependencies
-pnpm install
-# or
-npm install
-# or
-yarn install
-```
-
-### Development
-
-```bash
-# Start the development server
-pnpm dev
-# or
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the website.
-
-### Building for Production
-
-```bash
-# Build the application
-pnpm build
-# or
-npm run build
-# or
-yarn build
-```
-
-### Static Export
-
-```bash
-# Export as static files
-pnpm build
-# The static files will be generated in the 'out' directory
-```
-
-## 📁 Project Structure
-
-```
-├── app/
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx          # Root layout with metadata
-│   └── page.tsx            # Main page component
-├── components/
-│   ├── Contact.tsx         # Contact section
-│   ├── Education.tsx       # Education section
-│   ├── Experience.tsx      # Professional experience
-│   ├── HeaderNav.tsx       # Navigation header
-│   ├── Hero.tsx           # Hero section
-│   ├── Section.tsx        # Reusable section wrapper
-│   ├── Skills.tsx         # Technical skills
-│   └── Summary.tsx        # About/summary section
-├── data/
-│   └── resume.ts          # Resume data object
-├── types/
-│   └── resume.ts          # TypeScript interfaces
-├── public/
-│   ├── favicon.ico        # Site favicon
-│   └── resume.pdf         # Downloadable resume
-└── README.md
-```
-
-## 🎨 Customization
-
-### Personal Data
-
-Edit the resume data in `/data/resume.ts`:
-
-```typescript
-export const resume: Resume = {
-  name: "Your Name",
-  title: "Your Title",
-  // ... update with your information
-};
-```
-
-### Theming
-
-Modify the Ant Design theme in `/app/page.tsx`:
-
-```typescript
-const theme = {
-  token: {
-    colorPrimary: '#1677ff', // Change primary color
-    borderRadius: 8,         // Adjust border radius
-    // ... other theme tokens
-  },
-};
-```
-
-### Sections
-
-- Add/remove sections by editing the main page component
-- Modify section content by updating the respective components
-- Adjust styling in the global CSS file
-
-## 🚢 Deployment
-
-### Static Hosting (Recommended)
-
-After running `pnpm build`, deploy the `out` directory to:
-
-- **Netlify**: Drag and drop the `out` folder
-- **Vercel**: Connect your repository for automatic deployments
-- **GitHub Pages**: Upload contents to your repository
-- **AWS S3**: Upload to S3 bucket with static website hosting
-
-### Build Command for CI/CD
-
-```bash
-npm run build
-```
-
-The static files will be in the `out` directory.
-
-## ♿ Accessibility Features
-
-- Keyboard navigation support
-- Skip-to-content link
-- Proper heading hierarchy
-- Alt text for images and icons
-- High contrast ratios
-- Screen reader friendly
-
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px  
-- **Desktop**: > 1024px
-
-## 🔧 Configuration
-
-The site is configured for static export in `next.config.js`. Key settings:
-
-- `output: 'export'` - Enables static export
-- `images: { unoptimized: true }` - Required for static export
-- ESLint disabled during build for faster builds
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio. If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+🔗 Live Portfolio: https://your-vercel-link.vercel.app  
+🔗 LinkedIn: https://www.linkedin.com/in/awais-eng/  
+🔗 GitHub: https://github.com/engrawais  
 
 ---
 
-**Built with ❤️ by Muhammad Awais**
+## 🧠 About Me
+
+I specialize in designing and owning backend systems using .NET 8, ASP.NET Core, and Clean Architecture.  
+I have built and managed distributed microservices, AI pipelines, and high-scale API systems with 99.9% uptime.
+
+I focus on:
+- Scalable backend architecture
+- Microservices & distributed systems
+- AI-powered backend pipelines (LLMs)
+- Performance optimization & reliability
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- .NET 6/7/8, ASP.NET Core, Web APIs
+- Entity Framework Core, Dapper
+
+### Architecture
+- Microservices, Clean Architecture, CQRS, DDD
+- Event-driven systems, Serverless (AWS Lambda)
+
+### Cloud & DevOps
+- AWS (EC2, S3, Lambda), Azure (AKS, Functions)
+- Docker, Kubernetes, CI/CD, GitHub Actions
+- ElasticSearch (search & indexing)
+
+### Databases
+- SQL Server, PostgreSQL, MongoDB, Redis
+
+### AI Systems
+- LLM integrations, prompt orchestration
+- Background jobs, batching, rate limiting
+
+---
+
+## 💼 Experience
+
+### Senior .NET Developer – Codonomy (Remote) | 2023 – Present
+- Owned backend architecture for SaaS platform using .NET 8
+- Designed 14+ microservices with scalable architecture
+- Built AI-powered pipelines with LLM integrations
+- Developed reusable libraries across services
+- Managed CI/CD, Docker, Kubernetes infrastructure
+
+### Senior .NET Developer – RemoteBase / Cloudtek | 2014 – 2023
+- Built enterprise-grade APIs with ASP.NET Core
+- Optimized performance (60% latency reduction)
+- Deployed systems using Docker & Kubernetes
+- Designed scalable systems for 500+ users
+
+---
+
+## 🚀 Key Projects
+
+### OptifyNow – OTP SaaS Platform
+Scalable OTP delivery system using Node.js, MongoDB, and Socket.IO with payments (Stripe/Crypto), supporting 1,000+ users with 99.9% uptime.
+
+### VestureMe – AI Virtual Try-On
+Built GPU-based AI pipeline using PyTorch and FastAPI enabling real-time virtual try-on (5–30s response).
+
+### HRMS – Workforce System
+Developed ASP.NET MVC HRMS for 10,000+ users with 50% performance improvement.
+
+---
+
+## 🏆 Achievements
+
+- Maintained 99.9%+ system uptime
+- Reduced deployment failures by 50%
+- Designed scalable distributed systems
+- Built production-ready AI backend pipelines
+
+---
+
+## 🎯 What I'm Looking For
+
+- Senior Backend Engineer roles
+- Scalable SaaS / AI-driven systems
+- Remote-first engineering teams
+
+---
+
+## ⚙️ Instructions for Cursor AI
+
+Use this README as the **single source of truth** and:
+
+1. Replace portfolio content with this data
+2. Update sections:
+   - Hero → Name, title, summary
+   - Experience → Work history
+   - Skills → Tech stack
+   - Projects → Key projects
+3. Keep UI clean, minimal, and professional
+4. Focus on backend engineering (not frontend-heavy)
+
+---
+
+## ❤️ Built by Muhammad Awais
